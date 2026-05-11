@@ -1,0 +1,21 @@
+{
+  "name": "ساعاتي - متعقب ساعات العمل",
+  "short_name": "ساعاتي",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbfbfd",
+  "theme_color": "#C5A059",
+  "description": "تطبيق بسيط لحساب ساعات عمل الموظفين شهرياً",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
