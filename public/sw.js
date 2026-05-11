@@ -1,5 +1,5 @@
 const cacheName = 'v1';
-const cacheAssets = ['/'];
+const cacheAssets = ['./', 'index.html', 'manifest.json'];
 
 self.addEventListener('install', e => {
     e.waitUntil(

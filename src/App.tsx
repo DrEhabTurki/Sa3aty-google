@@ -366,6 +366,15 @@ export default function App() {
     return Number((minutes / 60).toFixed(2));
   };
 
+  // Helper to generate IDs that works everywhere
+  const generateId = () => {
+    try {
+      return crypto.randomUUID();
+    } catch (e) {
+      return Math.random().toString(36).substring(2, 11);
+    }
+  };
+
   const handleSaveEntry = () => {
     if (!selectedEmployeeId || !date || !checkIn || !checkOut) {
       showNotification('error', t.errorFill);
@@ -387,7 +396,7 @@ export default function App() {
       showNotification('success', t.successSave);
     } else {
       const newEntry: WorkEntry = {
-        id: crypto.randomUUID(),
+        id: generateId(),
         employeeId: employee.id,
         employeeName: employee.name,
         date,
@@ -440,7 +449,7 @@ export default function App() {
       setEditingEmployee(null);
     } else {
       const newEmployee: Employee = {
-        id: crypto.randomUUID(),
+        id: generateId(),
         name: employeeNameInput.trim(),
         role: employeeRoleInput.trim(),
         createdAt: new Date().toISOString()
